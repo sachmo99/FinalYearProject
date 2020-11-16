@@ -1,0 +1,6 @@
+fpdf
+requests
+bs4
+flask
+
+
