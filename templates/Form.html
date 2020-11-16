@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/mystyle.css') }}">
+    </head>
+   <body>
+   <div class="card">
+          <h1>UI Module</h1>
+      <form action = "http://localhost:5000/Proceed" method = "post">
+          <p>Enter IP Address:</p>
+          <p><input type = "text" name = "IP" /></p>
+          Single
+          <ul>
+		    <li>
+			    <input type="radio" name="range" id="one" checked onclick="ShowTextBox(1)" value="single"/>
+			    <label for="one">Single</label>
+
+			    <div class="check"></div>
+		    </li>
+
+		    <li>
+			    <input type="radio" name="range" id="two" onclick="ShowTextBox(0)" value="range"/>
+			    <label for="two">Range :</label>
+
+			    <div class="check"></div>
+		    </li>
+	        </ul>
+          <div id="dvtext" style="display: none">
+          <input type="text" id="txtBox" name="range_val" />
+          </div>
+          <p><input type = "submit" value = "submit" /></p>
+      </form>
+      <script>
+          function ShowTextBox(x)
+          {
+            if(x==0)
+                document.getElementById('dvtext').style.display='block';
+            else
+                document.getElementById('dvtext').style.display='none';
+           }
+      </script>
+   </div>
+   </body>
+</html>

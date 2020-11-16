@@ -1,0 +1,97 @@
+# Nmap 7.80 scan initiated Mon Nov  9 15:40:27 2020 as: nmap -p- -O -A -oN 192:168:0:1_09_11_20_15:40:27.txt -sV 192.168.0.1
+Nmap scan report for 192.168.0.1
+Host is up (0.0028s latency).
+Not shown: 65531 closed ports
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     Dropbear sshd 2012.55 (protocol 2.0)
+| ssh-hostkey: 
+|   1024 44:f4:79:6f:c0:e8:57:98:ec:c0:01:6f:c9:19:5e:c8 (DSA)
+|_  1040 56:e8:f7:63:77:8b:cf:76:f8:44:30:f9:e0:f4:99:47 (RSA)
+53/tcp   open  domain  Unbound 1.7.3
+| dns-nsid: 
+|   id.server: 10gbw46
+|_  bind.version: unbound 1.7.3
+80/tcp   open  http
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 24189
+|     Set-Cookie: JSESSIONID=deleted; Expires=Thu, 01 Jan 1970 00:00:01 GMT; Path=/; HttpOnly
+|     Connection: keep-alive
+|     <!DOCTYPE html> 
+|     <html xmlns="http://www.w3.org/1999/xhtml">
+|     <head>
+|     <META http-equiv=Content-Type content="text/html; charset=utf-8" />
+|     <META http-equiv=Pragma content=no-cache>
+|     <META http-equiv=Expires content=0>
+|     <!-- 
+|     <link rel="stylesheet" href="../css/login.css" type="text/css" />
+|     <link rel="stylesheet" href="../img/login/login.css" type="text/css" />
+|     <link rel="Shortcut Icon" href="../img/login/favicon.ico" type="image/jpeg" />
+|     <style type="text/css">
+|     body{
+|     font-family:Arial, sans-serief;
+|     background-color:#FFFFFF;
+|     margin:0px;
+|     padding:0px;
+|     div.loginBox
+|     display: block;
+|     position:relative;
+|     margin-top:10%;
+|     text-align:center;
+|   HTTPOptions, RTSPRequest: 
+|     HTTP/1.1 405 Method Not Allowed
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 124
+|     Set-Cookie: JSESSIONID=deleted; Expires=Thu, 01 Jan 1970 00:00:01 GMT; Path=/; HttpOnly
+|     Connection: close
+|_    <html><head><title>405 Method Not Allowed</title></head><body><center><h1>405 Method Not Allowed</h1></center></body></html>
+|_http-title: Site doesn't have a title (text/html; charset=utf-8).
+1900/tcp open  upnp    Portable SDK for UPnP devices 1.6.19 (Linux 2.6.36; UPnP 1.0)
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.80%I=7%D=11/9%Time=5FA962FD%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,559B,"HTTP/1\.1\x20200\x20OK\r\nContent-Type:\x20text/html;\x20c
+SF:harset=utf-8\r\nContent-Length:\x2024189\r\nSet-Cookie:\x20JSESSIONID=d
+SF:eleted;\x20Expires=Thu,\x2001\x20Jan\x201970\x2000:00:01\x20GMT;\x20Pat
+SF:h=/;\x20HttpOnly\r\nConnection:\x20keep-alive\r\n\r\n\xef\xbb\xbf<!DOCT
+SF:YPE\x20html>\x20\r\n<html\x20xmlns=\"http://www\.w3\.org/1999/xhtml\">\
+SF:r\n\r\n<head>\r\n<META\x20http-equiv=Content-Type\x20content=\"text/htm
+SF:l;\x20charset=utf-8\"\x20/>\r\n<META\x20http-equiv=Pragma\x20content=no
+SF:-cache>\r\n<META\x20http-equiv=Expires\x20content=0>\r\n\r\n<!--\x20\r\
+SF:n<link\x20rel=\"stylesheet\"\x20href=\"\.\./css/login\.css\"\x20type=\"
+SF:text/css\"\x20/>\r\n<link\x20rel=\"stylesheet\"\x20href=\"\.\./img/logi
+SF:n/login\.css\"\x20type=\"text/css\"\x20/>\r\n-->\r\n<link\x20rel=\"Shor
+SF:tcut\x20Icon\"\x20href=\"\.\./img/login/favicon\.ico\"\x20type=\"image/
+SF:jpeg\"\x20/>\r\n<style\x20type=\"text/css\">\r\nbody{\r\n\x20\x20\x20\x
+SF:20font-family:Arial,\x20sans-serief;\r\n\x20\x20\x20\x20background-colo
+SF:r:#FFFFFF;\r\n\x20\x20\x20\x20margin:0px;\r\n\x20\x20\x20\x20padding:0p
+SF:x;\r\n}\r\ndiv\.loginBox\r\n{\r\n\x20\x20\x20\x20display:\x20block;\r\n
+SF:\x20\x20\x20\x20position:relative;\r\n\x20\x20\x20\x20margin-top:10%;\r
+SF:\n\x20\x20\x20\x20text-align:center;\r\n}")%r(HTTPOptions,148,"HTTP/1\.
+SF:1\x20405\x20Method\x20Not\x20Allowed\r\nContent-Type:\x20text/html;\x20
+SF:charset=utf-8\r\nContent-Length:\x20124\r\nSet-Cookie:\x20JSESSIONID=de
+SF:leted;\x20Expires=Thu,\x2001\x20Jan\x201970\x2000:00:01\x20GMT;\x20Path
+SF:=/;\x20HttpOnly\r\nConnection:\x20close\r\n\r\n<html><head><title>405\x
+SF:20Method\x20Not\x20Allowed</title></head><body><center><h1>405\x20Metho
+SF:d\x20Not\x20Allowed</h1></center></body></html>")%r(RTSPRequest,148,"HT
+SF:TP/1\.1\x20405\x20Method\x20Not\x20Allowed\r\nContent-Type:\x20text/htm
+SF:l;\x20charset=utf-8\r\nContent-Length:\x20124\r\nSet-Cookie:\x20JSESSIO
+SF:NID=deleted;\x20Expires=Thu,\x2001\x20Jan\x201970\x2000:00:01\x20GMT;\x
+SF:20Path=/;\x20HttpOnly\r\nConnection:\x20close\r\n\r\n<html><head><title
+SF:>405\x20Method\x20Not\x20Allowed</title></head><body><center><h1>405\x2
+SF:0Method\x20Not\x20Allowed</h1></center></body></html>");
+MAC Address: 60:32:B1:0A:C6:5C (Unknown)
+Device type: general purpose
+Running: Linux 2.6.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6
+OS details: Linux 2.6.23 - 2.6.38
+Network Distance: 1 hop
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel, cpe:/o:linux:linux_kernel:2.6.36
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   2.83 ms 192.168.0.1
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Nov  9 15:42:01 2020 -- 1 IP address (1 host up) scanned in 93.37 seconds
