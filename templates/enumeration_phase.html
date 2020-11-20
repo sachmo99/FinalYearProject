@@ -1,0 +1,43 @@
+<html>
+    <head>
+<title>Enumeration Phase</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/mystyle.css') }}">
+    </head>
+    <body>
+        <div class="card">
+               <h1>Enumeration Module</h1>
+               <form  id="form_2" action="http://localhost:5000/enumeration" method="post">
+                <h5>Please click the below button to begin CVE scan</h5>
+                <input type="text" name="ip" value={{filename}} id="ipaddress"/>
+               <button onclick="beginCVEScan()">Begin CVE SCAN</button>
+                </form>
+               <h2 id="info" style="display: none;">CVE Scan will begin.. Please wait a few minutes...</h2>
+               <h4>In the meantime, you can read the NMAP report for self analysis..</h4>
+                <a href="/return-file/{{filename}}.xml" target="_blank"><button >Click here to download NMAP report</button></a>
+               <div class="loader" id="loader_bar" style="display: none;"></div> 
+           <script>
+               function beginCVEScan() {
+                   document.getElementById('form_2').style.display = "none";
+                   document.getElementById('info').style.display = "block";
+                   document.getElementById("loader_bar").style.display = "block";
+                   
+                   document.getElementById('form_2').submit();
+
+               }
+                function download_nmap_report() {
+                    var element = document.createElement('a');
+                    //element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent());
+                    element.setAttribute('download', "/home/kali/Desktop/Final_Year_Project/cache/"+{{filename}}+".xml");
+                    console.log("/home/kali/Desktop/Final_Year_Project/cache/"+{{filename}}+".xml");
+                    element.style.display = 'none';
+                    document.body.appendChild(element);
+
+                    element.click();
+
+                    document.body.removeChild(element);
+                    
+                }
+           </script>
+        </div>
+        </body>
+</html>

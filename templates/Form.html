@@ -5,7 +5,7 @@
    <body>
    <div class="card">
           <h1>UI Module</h1>
-      <form action = "http://localhost:5000/Proceed" method = "post">
+      <form action = "http://localhost:5000/Proceed" method = "post" id="form_main">
           <p>Enter IP Address:</p>
           <p><input type = "text" name = "IP" /></p>
           Single
@@ -27,8 +27,11 @@
           <div id="dvtext" style="display: none">
           <input type="text" id="txtBox" name="range_val" />
           </div>
-          <p><input type = "submit" value = "submit" /></p>
+          <p><button onclick="bar()" >Submit</button></p>
+         
       </form>
+      <div class="loader" id="loader_bar" style="display: none;"></div> 
+      <p>NMAP takes longer to perform a full scan. Please be patient.. Thank you</p>
       <script>
           function ShowTextBox(x)
           {
@@ -36,6 +39,11 @@
                 document.getElementById('dvtext').style.display='block';
             else
                 document.getElementById('dvtext').style.display='none';
+           }
+           function bar() {
+               document.getElementById('loader_bar').style.display = "block";
+               document.getElementById('form_main').style.display = "none";
+               document.getElementById('form_main').submit();
            }
       </script>
    </div>

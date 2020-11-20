@@ -1,6 +1,8 @@
-from flask import Flask, redirect, url_for, request, render_template
+from flask import Flask, redirect, url_for, request, render_template, send_file,send_from_directory
 #from 'Final_Year_Project/EnumerationModule/BasicScanScript.py' import SCAN
-from EnumerationModule.BasicScanScript import SCAN
+from EnumerationModule.ScanScript import SCAN
+from TestingModule.test1 import CVE_SCAN
+from report_generation_module import pdfmaker
 app = Flask(__name__)
 
 @app.route('/')
@@ -22,8 +24,33 @@ def Proceed():
          ip_final = IP
       else:
          ip_final = IP+"/"+request.form['range_val']
-         
-      return "WELCOME ASSHOLE " + ip_final
+      filename = SCAN(ip_final)
+      return render_template('enumeration_phase.html',filename=filename)
+
+@app.route('/enumeration',methods=['GET','POST'])
+def Enumerate():
+   if request.method=="POST":
+      IP = request.form["ip"]
+      print("enumeration,",IP)
+      result = CVE_SCAN(IP)
+      output = pdfmaker(IP)
+      return "<a href='/download-report/{}' target='_blank'><button>Download final Report</button></a>".format(output)
+   return render_template('enumeration_phase.html',filename="0:0:0:0")
+
+@app.route('/return-file/<filename>',methods=['post','get'])
+def downloadfile(filename):
+   try:
+      return send_from_directory(directory="cache", filename=filename,as_attachment=True)
+   except Exception as e:
+      return str(e)
+
+@app.route('/download-report/<filename>',methods=['POST','GET'])
+def downloadreport(filename):
+   try:
+      return send_from_directory(directory="results", filename=filename,as_attachment=True)
+   except Exception as e:
+      return str(e)
+
 
 if __name__ == '__main__':
    app.run(debug = True)
