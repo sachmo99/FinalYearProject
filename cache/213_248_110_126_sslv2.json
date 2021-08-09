@@ -1,0 +1,107 @@
+{
+    "server_connectivity_errors": [],
+    "server_scan_results": [
+        {
+            "scan_commands": [
+                "ssl_2_0_cipher_suites"
+            ],
+            "scan_commands_errors": {},
+            "scan_commands_extra_arguments": {},
+            "scan_commands_results": {
+                "ssl_2_0_cipher_suites": {
+                    "accepted_cipher_suites": [],
+                    "cipher_suite_preferred_by_server": null,
+                    "rejected_cipher_suites": [
+                        {
+                            "cipher_suite": {
+                                "is_anonymous": false,
+                                "key_size": 128,
+                                "name": "SSL_CK_RC4_128_WITH_MD5",
+                                "openssl_name": "RC4-MD5"
+                            },
+                            "error_message": "Server rejected the connection"
+                        },
+                        {
+                            "cipher_suite": {
+                                "is_anonymous": false,
+                                "key_size": 40,
+                                "name": "SSL_CK_RC4_128_EXPORT40_WITH_MD5",
+                                "openssl_name": "EXP-RC4-MD5"
+                            },
+                            "error_message": "Server rejected the connection"
+                        },
+                        {
+                            "cipher_suite": {
+                                "is_anonymous": false,
+                                "key_size": 128,
+                                "name": "SSL_CK_RC2_128_CBC_WITH_MD5",
+                                "openssl_name": "RC2-CBC-MD5"
+                            },
+                            "error_message": "Server rejected the connection"
+                        },
+                        {
+                            "cipher_suite": {
+                                "is_anonymous": false,
+                                "key_size": 40,
+                                "name": "SSL_CK_RC2_128_CBC_EXPORT40_WITH_MD5",
+                                "openssl_name": "EXP-RC2-CBC-MD5"
+                            },
+                            "error_message": "Server rejected the connection"
+                        },
+                        {
+                            "cipher_suite": {
+                                "is_anonymous": false,
+                                "key_size": 128,
+                                "name": "SSL_CK_IDEA_128_CBC_WITH_MD5",
+                                "openssl_name": "IDEA-CBC-MD5"
+                            },
+                            "error_message": "Server rejected the connection"
+                        },
+                        {
+                            "cipher_suite": {
+                                "is_anonymous": false,
+                                "key_size": 56,
+                                "name": "SSL_CK_DES_64_CBC_WITH_MD5",
+                                "openssl_name": "DES-CBC-MD5"
+                            },
+                            "error_message": "Server rejected the connection"
+                        },
+                        {
+                            "cipher_suite": {
+                                "is_anonymous": false,
+                                "key_size": 168,
+                                "name": "SSL_CK_DES_192_EDE3_CBC_WITH_MD5",
+                                "openssl_name": "DES-CBC3-MD5"
+                            },
+                            "error_message": "Server rejected the connection"
+                        }
+                    ],
+                    "tls_version_used": "SSL_2_0"
+                }
+            },
+            "server_info": {
+                "network_configuration": {
+                    "network_max_retries": 3,
+                    "network_timeout": 5,
+                    "tls_client_auth_credentials": null,
+                    "tls_opportunistic_encryption": null,
+                    "tls_server_name_indication": "213.248.110.126",
+                    "xmpp_to_hostname": null
+                },
+                "server_location": {
+                    "hostname": "213.248.110.126",
+                    "ip_address": "213.248.110.126",
+                    "port": 443
+                },
+                "tls_probing_result": {
+                    "cipher_suite_supported": "TLS_AES_256_GCM_SHA384",
+                    "client_auth_requirement": "DISABLED",
+                    "highest_tls_version_supported": "TLS_1_3"
+                }
+            }
+        }
+    ],
+    "sslyze_url": "https://github.com/nabla-c0d3/sslyze",
+    "sslyze_version": "3.0.8",
+    "total_scan_time": 2.3007893562316895
+}

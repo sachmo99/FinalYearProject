@@ -28,6 +28,7 @@
           <input type="text" id="txtBox" name="range_val" />
           </div>
           <p><button onclick="bar()" >Submit</button></p>
+          <p><button onclick="webtest()">Begin WebTests</button></p>
          
       </form>
       <div class="loader" id="loader_bar" style="display: none;"></div> 
@@ -44,6 +45,12 @@
                document.getElementById('loader_bar').style.display = "block";
                document.getElementById('form_main').style.display = "none";
                document.getElementById('form_main').submit();
+           }
+           function webtest() {
+            document.getElementById('loader_bar').style.display = "block";
+            document.getElementById('form_main').style.display = "none";
+            document.getElementById('form_main').action = "http://localhost:5000/webtesting";
+            document.getElementById('form_main').submit();
            }
       </script>
    </div>

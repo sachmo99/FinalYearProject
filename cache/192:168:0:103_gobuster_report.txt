@@ -1,0 +1,15 @@
+The following URLs are accessible by bruteforcing. Please check their security. 
+GOBUSTER SCAN 
+http://192.168.0.103/.svn/entries  : Status: 200
+http://192.168.0.103/.svn  : Status: 200
+http://192.168.0.103/config  : Status: 200
+http://192.168.0.103/docs  : Status: 200
+http://192.168.0.103/external  : Status: 200
+http://192.168.0.103/favicon.ico  : Status: 200
+http://192.168.0.103/index.php  : Status: 200
+http://192.168.0.103/php.ini  : Status: 200
+http://192.168.0.103/phpinfo.php  : Status: 200
+http://192.168.0.103/phpmyadmin  : Status: 200
+http://192.168.0.103/robots.txt  : Status: 200
+http://192.168.0.103/server-status  : Status: 200
+http://192.168.0.103/server-info  : Status: 200

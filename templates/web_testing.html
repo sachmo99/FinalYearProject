@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Web Testing</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/mystyle.css') }}">
+    </head>
+
+    <body>
+        <div class="card">
+            <h1>Web Testing Module</h1>
+        <form action = "http://localhost:5000/webtesting" method = "post" id="form_main">
+            <a href='https://localhost:5000/download-report/{{filename}}' target="_self"><button>Download final Report of CVE SCANNER</button></a>
+            <p>Enter IP Address:</p>
+            <p><input type = "text" name = "IP" value={{ip_address}} /></p>
+            
+            <div id="dvtext" style="display: none">
+            <input type="text" id="txtBox" name="range_val" />
+            </div>
+            <p><button onclick="bar()" >Submit</button></p>
+           
+        </form>
+        <div class="loader" id="loader_bar" style="display: none;"></div> 
+        <p>NMAP takes longer to perform a full scan. Please be patient.. Thank you</p>
+        <script>
+            function ShowTextBox(x)
+            {
+              if(x==0)
+                  document.getElementById('dvtext').style.display='block';
+              else
+                  document.getElementById('dvtext').style.display='none';
+             }
+             function bar() {
+                 document.getElementById('loader_bar').style.display = "block";
+                 document.getElementById('form_main').style.display = "none";
+                 document.getElementById('form_main').submit();
+             }
+        </script>
+     </div>
+
+    </body>
+</html>

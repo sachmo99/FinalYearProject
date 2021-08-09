@@ -1,0 +1,47 @@
+SSL SECURITY TESTING - WEB APPLICATION of 192.168.0.103
+SCAN COMMANDS USED: 
+tls_fallback_scsv 
+robot 
+ssl_3_0_cipher_suites 
+ssl_2_0_cipher_suites 
+certificate_info 
+openssl_ccs_injection 
+session_resumption 
+tls_1_2_cipher_suites 
+tls_compression 
+session_renegotiation 
+tls_1_0_cipher_suites 
+heartbleed 
+tls_1_1_cipher_suites 
+tls_1_3_cipher_suites 
+
+ HEARTBLEED VULN: 
+False
+ OPENSSL CCS INJECTION VULN: 
+False
+ ROBOT VULN: 
+NOT_VULNERABLE_NO_ORACLE
+ SSL 2.0 probing results:
+ Accepted ciphers:7
+ Rejected cipher suites:0
+ SSL 3.0 probing results:
+ Accepted ciphers:15
+ Rejected cipher suites:65
+ TLS1.0 probing results:
+ Accepted ciphers:15
+ Rejected cipher suites:65
+ TLS1.1 probing results:
+ Accepted ciphers:0
+ Rejected cipher suites:80
+ TLS1.2 probing results:
+ Accepted ciphers:0
+ Rejected cipher suites:158
+ TLS1.3 probing results:
+ Accepted ciphers:0
+ Rejected cipher suites:5
+ RESULT:
+ cipher suite supported:DHE-RSA-AES256-SHA
+ client auth requirement:DISABLED
+ highest tls version supported:TLS_1_0
+ CURRENT STABLE TLS VERSION IN INTERNET IS TLS 1.2 or 1.3 - anything below that is deprecated and prone to attacks 
+for more details perform a manual scan using: sslyze --regular 192.168.0.103
